@@ -79,8 +79,10 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color: #000000d9;
+  font-family: "Chivo";
+  background-color: #fff;
 }
