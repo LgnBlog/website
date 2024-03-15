@@ -2,7 +2,7 @@
  * @Author: Li GuangNing lign@stpass.com
  * @Date: 2024-03-13 18:24:19
  * @LastEditors: Li GuangNing lign@stpass.com
- * @LastEditTime: 2024-03-15 15:39:54
+ * @LastEditTime: 2024-03-15 18:24:31
  * @FilePath: \website\src\components\nav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -14,6 +14,17 @@
         <span @click="handleClick('/myProject')" target="_blank">项目</span>
         <span @click="handleClick('/myResume')" target="_blank">友链工具</span>
         <span @click="handleClick('/linkFriend')" target="_blank">个人简历</span>
+        <span class="chat">
+          <el-popover placement="top-start" title="扫码加微信" :width="110" trigger="hover"
+            content="">
+            <img style="width: 100px;" src="@/assets/img/wx.png" alt="微信号">
+            <template #reference>
+              <el-icon :size="size" :color="color">
+                <ChatDotRound />
+              </el-icon>
+            </template>
+          </el-popover>
+        </span>
       </div>
     </div>
     <div class="selectInfo">
@@ -70,14 +81,19 @@ const selectVal = ref()
 
       span {
         // color: #909399;
-        font-size: 14px;
+        font-size: 16px;
         margin: 0 10px;
         cursor: pointer;
         color: #ffffff;
       }
 
       span:hover {
-        color: #2671fc;
+        color: green;
+      }
+
+      .chat {
+        font-size: 20px;
+        color: green;
       }
     }
   }
@@ -94,6 +110,7 @@ const selectVal = ref()
     }
   }
 }
+
 :deep(.el-input__inner) {
   padding: 10px 0;
   height: auto;
@@ -108,13 +125,16 @@ const selectVal = ref()
   color: #fff;
 }
 
-:deep(.el-input__wrapper){
- box-shadow: 0 0 0 0px #6a70e9;
+:deep(.el-input__wrapper) {
+  box-shadow: 0 0 0 0px #6a70e9;
 }
-:deep(.el-anchor__list){
+
+:deep(.el-anchor__list) {
   margin-top: 10px;
-  .el-anchor__link{
+
+  .el-anchor__link {
     color: #fff;
+    font-size: 14px;
   }
 }
 </style>
