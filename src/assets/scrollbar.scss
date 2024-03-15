@@ -1,0 +1,16 @@
+/* WebKit 浏览器（Chrome、Safari） */
+::-webkit-scrollbar {
+  width: 0px; /* 滚动条宽度 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* 滚动条拖动部分的颜色 */
+  border-radius: 5px; /* 滚动条拖动部分的圆角 */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* 滚动条轨道的颜色 */
+}
+
+/* Firefox 浏览器 */
+/* 注意：Firefox 目前不支持滚动条的自定义样式 */

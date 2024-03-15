@@ -2,7 +2,7 @@
  * @Author: Li GuangNing lign@stpass.com
  * @Date: 2024-03-08 18:20:07
  * @LastEditors: Li GuangNing lign@stpass.com
- * @LastEditTime: 2024-03-14 18:05:59
+ * @LastEditTime: 2024-03-15 11:39:32
  * @FilePath: \website\src\router\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -22,11 +22,6 @@ const router = createRouter({
       component: () => import('../views/homePage.vue'),
       redirect: '/myProject',
       children: [
-        {
-          path: '/homePage',
-          name: 'homePage',
-          component: () => import('../views/homePage.vue')
-        },
         {
           path: '/myResume',
           name: 'myResume',
