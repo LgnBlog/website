@@ -2,7 +2,7 @@
  * @Author: Li GuangNing lign@stpass.com
  * @Date: 2024-03-13 18:24:19
  * @LastEditors: Li GuangNing lign@stpass.com
- * @LastEditTime: 2024-03-15 18:24:31
+ * @LastEditTime: 2024-03-18 14:56:08
  * @FilePath: \website\src\components\nav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -58,7 +58,7 @@ const selectVal = ref()
 .bg-block {
   width: 100%;
   height: 260px;
-  background: url('@/assets/img/bgs2.jpg') no-repeat center;
+  background: url('@/assets/img/bgs13.jpg') no-repeat center;
   // background: skyblue no-repeat center;
   background-size: 100% 100%;
 
@@ -74,17 +74,18 @@ const selectVal = ref()
 
     .logo {
       font-size: 24px;
+      color: #ffffff;
     }
 
     .nav {
       display: flex;
 
       span {
-        // color: #909399;
-        font-size: 16px;
+        color: #909399;
+        font-size: 15px;
         margin: 0 10px;
         cursor: pointer;
-        color: #ffffff;
+        // color: #ffffff;
       }
 
       span:hover {
@@ -128,12 +129,15 @@ const selectVal = ref()
 :deep(.el-input__wrapper) {
   box-shadow: 0 0 0 0px #6a70e9;
 }
+:deep(.el-anchor__marker) {
+  background-color: #0075ed;
+}
 
 :deep(.el-anchor__list) {
   margin-top: 10px;
 
   .el-anchor__link {
-    color: #fff;
+    color: #474545;
     font-size: 14px;
   }
 }
