@@ -2,14 +2,14 @@
  * @Author: Li GuangNing lign@stpass.com
  * @Date: 2024-03-13 18:24:19
  * @LastEditors: Li GuangNing lign@stpass.com
- * @LastEditTime: 2024-03-18 14:56:08
+ * @LastEditTime: 2024-03-20 17:02:21
  * @FilePath: \website\src\components\nav.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <div class="bg-block">
     <div class="nav-block">
-      <div class="logo">LGN</div>
+      <div class="logo">LGN-五年前端开发</div>
       <div class="nav">
         <span @click="handleClick('/myProject')" target="_blank">项目</span>
         <span @click="handleClick('/myResume')" target="_blank">友链工具</span>
@@ -19,7 +19,7 @@
             content="">
             <img style="width: 100px;" src="@/assets/img/wx.png" alt="微信号">
             <template #reference>
-              <el-icon :size="size" :color="color">
+              <el-icon >
                 <ChatDotRound />
               </el-icon>
             </template>
@@ -34,7 +34,7 @@
         </el-input>
       </div>
       <el-anchor :offset="70" direction="horizontal">
-        <el-anchor-link v-for="item in projectArr" :key="item.id" :href="`#${item.id}`" :title="item.title">
+        <el-anchor-link v-for="item in projectArr" :key="item.id" :href="handleHref(item)" :title="item.title">
         </el-anchor-link>
       </el-anchor>
     </div>
@@ -43,22 +43,29 @@
 
 <script setup>
 import router from '@/router';
+import { useRouter } from 'vue-router';
 import { Search } from '@element-plus/icons-vue'
 import { ref } from 'vue';
 import { projectArr } from '@/utills/const';
 const handleClick = (path = '/') => {
-  alert(path)
   router.push(path);
 };
-
+const handleHref = (item) => {
+  const router = useRouter()
+  if(router.currentRoute.value.path == '/myProject'){
+    return `#${item.id}`;
+  }else{
+    return `/myProject#${item.id}`;
+  }
+};
 const selectVal = ref()
 </script>
 
 <style lang="scss" scoped>
 .bg-block {
   width: 100%;
-  height: 260px;
-  background: url('@/assets/img/bgs13.jpg') no-repeat center;
+  height: 390px;
+  background: url('@/assets/img/bgs14.png') no-repeat center;
   // background: skyblue no-repeat center;
   background-size: 100% 100%;
 
@@ -74,27 +81,30 @@ const selectVal = ref()
 
     .logo {
       font-size: 24px;
-      color: #ffffff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(90deg, #e7a62e, #00a08b);
+      color: #fff;
     }
 
     .nav {
       display: flex;
 
       span {
-        color: #909399;
+        // color: #909399;
         font-size: 15px;
         margin: 0 10px;
         cursor: pointer;
-        // color: #ffffff;
+        color: #ffffff;
       }
 
       span:hover {
-        color: green;
+        color: rgb(73, 177, 73);
       }
 
       .chat {
         font-size: 20px;
-        color: green;
+        color: rgb(56, 240, 56);
       }
     }
   }
@@ -137,7 +147,8 @@ const selectVal = ref()
   margin-top: 10px;
 
   .el-anchor__link {
-    color: #474545;
+    // color: #ffffff;
+    // color: #474545;
     font-size: 14px;
   }
 }
